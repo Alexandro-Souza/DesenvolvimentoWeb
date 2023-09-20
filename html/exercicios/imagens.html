@@ -1,0 +1,195 @@
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da Cidade por Tarso">
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Intro cod3r"
+        height="342">
+</p>
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt="Rio de janeiro"
+        height="342">
+</p>
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="Avatar"
+        align ="left"
+        height="50">
+        fjejwnfjkewjkqbfejkwbqjkfvcfhjkuidqhjuigfnejkunqwjkgfgnjenqjvcvnjku
+        fewfwejqbfhvjh  bcyiewbhngurneuqabvuibneuwqanjufvneuiqbuvibedubJNFJ
+        fbewahvbhyebsabefvuibheuiwbhui
+</p>
+<p class="cidade"></p>
+<p>
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estrita.png" alt="Logo">
+    </picture>
+</p>
+<style>
+    .circular{
+        width: 513px;
+        background-color: #444;
+
+    }
+    .texto{
+        width: 400px;
+    }
+    .texto img{
+        margin-right: 10px;
+    }
+    .cidade{
+        width: 513px;
+        height: 342px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+
+<div class="slider">
+    <div class="slides">
+          <input type="radio" name="" id="radio1">
+          <input type="radio" name="" id="radio2">
+          <input type="radio" name="" id="radio3">
+
+          <div class="slide first">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/03/thumb-video.png" alt="imagem 1"/>
+          </div>
+          <div class="slide ">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/09/thumb.png" alt="imagem 2"/>
+          </div>
+          <div class="slide">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/06/thumpost.png" alt="imagem 3"/>
+          </div>
+          <div class="Navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+          </div>
+             
+    </div>
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+    </div>
+</div>
+
+<style>
+  .slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 800px;
+    
+  }
+  .slides{
+    width: 400px;
+    height: 400px;
+    display: flex;
+  }
+
+  .slides input{
+    display: none;
+  }
+  .slide{
+    width: 25%;
+    position: relative;
+  }
+  .slide img{
+    width: 500px;
+  }
+  .manual-navigation{
+    position: absolute;
+    width: 500px;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+     
+  }
+  .manual-btn{
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  .manual-btn :hover{
+    background-color: white;
+  }
+
+  #radio1:checked~.first{
+    margin-left: 0;
+  }
+
+  #radio2:checked~.first{
+    margin-left: -25%;
+  }
+  #radio3:checked~.first{
+    margin-left: -50%;
+  }
+  .navigation-auto div{
+    border: 2px;
+    padding: 5px;
+    border-radius: 10px ;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+  }
+  .navidation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+  }
+  .navigation-auto{
+    margin-right: 40px;
+
+  }
+  .radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: white;
+  }
+  .radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: white;
+  }
+  .radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: white;
+  }
+
+</style>
+<script>
+let count =1;
+document.getElementById("radio").checked = true;
+
+setInterval(function(){
+    nextImage();
+
+},2000)
+
+function nextImage(){
+    count++;
+    if(count > 3){
+        count = 1;
+    }
+
+    document.getElementById("radio2" + count).checked = true;
+
+}
+</script>
